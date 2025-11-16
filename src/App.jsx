@@ -1,5 +1,12 @@
 import React, { useState, useRef } from 'react';
 import './App.css';
+import sorryGif from './assets/sorryyy.gif';
+import dancingGif from './assets/dancing.gif';
+import hbdGif from './assets/hbd.gif';
+import missileImg from './assets/missile.png';
+import explosionImg from './assets/explosion.png';
+import happyBirthdayAudio from './assets/happy-birthday.mp3';
+import explosionAudio from './assets/explosion.wav';
 
 function App() {
   const [showMissile, setShowMissile] = useState(false);
@@ -59,7 +66,7 @@ function App() {
         <div className="image-container">
           {!showHappyBirthday ? (
             <div className="sorry-image">
-              <img src="/sorryyy.gif" alt="Sorry" className="sorry-gif" />
+              <img src={sorryGif} alt="Sorry" className="sorry-gif" />
             </div>
           ) : (
             <div className="happy-birthday-container fade-in">
@@ -69,25 +76,25 @@ function App() {
               </div>
               
               {/* Dancing gifs in 4 directions */}
-              <img src="/dancing.gif" alt="Dancing" className="dancing-gif top-left" />
-              <img src="/dancing.gif" alt="Dancing" className="dancing-gif top-right" />
-              <img src="/dancing.gif" alt="Dancing" className="dancing-gif bottom-left" />
-              <img src="/dancing.gif" alt="Dancing" className="dancing-gif bottom-right" />
+              <img src={dancingGif} alt="Dancing" className="dancing-gif top-left" />
+              <img src={dancingGif} alt="Dancing" className="dancing-gif top-right" />
+              <img src={dancingGif} alt="Dancing" className="dancing-gif bottom-left" />
+              <img src={dancingGif} alt="Dancing" className="dancing-gif bottom-right" />
               
               {/* Main happy birthday gif */}
-              <img src="/hbd.gif" alt="Happy Birthday" className="hbd-gif" />
+              <img src={hbdGif} alt="Happy Birthday" className="hbd-gif" />
             </div>
           )}
           
           {showMissile && (
             <div className="missile-container">
-              <img src="/missile.png" alt="Missile" className="missile" />
+              <img src={missileImg} alt="Missile" className="missile" />
             </div>
           )}
           
           {showExplosion && (
             <div className="explosion-container">
-              <img src="/explosion.png" alt="Explosion" className="explosion" />
+              <img src={explosionImg} alt="Explosion" className="explosion" />
             </div>
           )}
         </div>
@@ -121,12 +128,12 @@ function App() {
       
       {/* Audio elements */}
       <audio ref={audioRef} preload="auto">
-        <source src="/happy-birthday.mp3" type="audio/mpeg" />
+        <source src={happyBirthdayAudio} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       
       <audio ref={explosionAudioRef} preload="auto">
-        <source src="/explosion.wav" type="audio/wav" />
+        <source src={explosionAudio} type="audio/wav" />
         Your browser does not support the audio element.
       </audio>
     </div>
