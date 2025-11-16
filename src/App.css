@@ -1,0 +1,343 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  margin-bottom: 50px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.sorry-gif {
+  width: 300px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+.happy-birthday-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.birthday-message {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+}
+
+.birthday-message h1 {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  animation: gradientShift 3s ease-in-out infinite;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hbd-gif {
+  width: 350px;
+  height: 280px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.morse-code {
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 255, 0, 0.3);
+  margin-top: 15px;
+  text-align: center;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.7;
+  }
+}
+
+.dancing-gif {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 1;
+  animation: dance 2s infinite ease-in-out;
+}
+
+.dancing-gif.top-left {
+  top: 40px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.dancing-gif.top-right {
+  top: 40px;
+  right: 20px;
+  animation-delay: 0.5s;
+}
+
+.dancing-gif.bottom-left {
+  bottom: 40px;
+  left: 20px;
+  animation-delay: 1s;
+}
+
+.dancing-gif.bottom-right {
+  bottom: 40px;
+  right: 20px;
+  animation-delay: 1.5s;
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.missile-container {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.missile {
+  width: 60px;
+  height: 120px;
+  animation: launchMissile 1.5s ease-out forwards;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes launchMissile {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-50px) rotate(-10deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-150px) rotate(-20deg) scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-250px) rotate(-30deg) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px) rotate(-45deg) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.explosion-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.explosion {
+  width: 200px;
+  height: 200px;
+  animation: explode 1s ease-out forwards;
+  filter: drop-shadow(0 0 20px rgba(255, 165, 0, 0.6));
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.5) rotate(-5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.click-button, .reset-button {
+  background: linear-gradient(145deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.click-button:hover:not(:disabled), 
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.click-button:active:not(:disabled), 
+.reset-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.click-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.reset-button {
+  background: linear-gradient(145deg, #ff9a9e, #fecfef);
+  color: #333;
+  box-shadow: 0 6px 20px rgba(255, 154, 158, 0.4);
+}
+
+.reset-button:hover {
+  box-shadow: 0 8px 25px rgba(255, 154, 158, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .image-container {
+    height: 400px;
+  }
+  
+  .birthday-message h1 {
+    font-size: 2rem;
+  }
+  
+  .birthday-message {
+    top: -50px;
+  }
+  
+  .sorry-gif, .hbd-gif {
+    width: 280px;
+    height: 220px;
+  }
+  
+  .dancing-gif {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .dancing-gif.top-left, .dancing-gif.top-right {
+    top: 30px;
+  }
+  
+  .dancing-gif.bottom-left, .dancing-gif.bottom-right {
+    bottom: 30px;
+  }
+  
+  .morse-code {
+    font-size: 0.6rem;
+    padding: 3px 6px;
+    margin-top: 10px;
+  }
+  
+  .missile {
+    width: 50px;
+    height: 100px;
+  }
+  
+  .explosion {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .click-button, .reset-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
